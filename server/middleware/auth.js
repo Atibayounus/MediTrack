@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 function protect(req, res, next) {
   let token = req.cookies.token; // 1. browser cookie se
 
-  // TASK 4.4 - agar cookie nahi mili to Bearer header check karo
+  // TASK 4.4 - agar cookie nahi mili to Bearer header check karo  
   const header = req.headers["authorization"];
   if (!token && header && header.startsWith("Bearer ")) {
     token = header.split(" ")[1];

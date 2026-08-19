@@ -1,68 +1,118 @@
+<div align="center">
+
 # 🏥 MediTrack
 
-MediTrack is a web application designed to help manage medication tracking, patient/doctor workflows, and access control with secure authentication and role-based routes.
+![MediTrack Banner](https://capsule-render.vercel.app/api?type=waving\&color=0:0052D4,50:4364F7,100:6FB1FC\&height=180\&section=header\&text=MediTrack\&fontSize=60\&fontColor=ffffff\&animation=fadeIn\&fontAlignY=38)
+
+### Full-Stack Healthcare Management System
+
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge\&logo=node.js\&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge\&logo=express\&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge\&logo=mongodb\&logoColor=white)](https://www.mongodb.com/)
+
+</div>
 
 ---
 
-## 🚀 Features & Project Progress
+## 📖 About
 
-### Completed Features
-- **Global 401 Interceptor:** Captures unauthorized requests in `client/src/api/axios.js` via `setUnauthorisedHandler` and re-rejects promises cleanly.
-- **User Authentication:** Registration, login, and cookie-based session management.
-- **Role-Based Access Control (RBAC):** Protected routes and staff roles configured across client and server.
-- **Resource Ownership:** Filters data dynamically based on user ownership.
+MediTrack is a MERN-based healthcare management system for handling **authentication, patients, staff, and appointments** with role-based access control.
 
-### Part 9 Security & Optimizations (In Progress)
-- [x] **Task 7.4:** Global 401 interceptor in `axios.js`
-- [ ] **Task 9.1:** HTTP Header security via `helmet`
-- [ ] **Task 9.2:** Rate limiting on `/api/auth`
-- [ ] **Task 9.3:** NoSQL injection protection using `express-mongo-sanitize`
-- [ ] **Task 9.4:** Production cookie settings (`sameSite: "none"`, `trust proxy`)
-- [ ] **Tasks 8.2 / 8.3:** Forgot & reset password workflows (Endpoints currently return `501 Not Implemented`)
+## ✨ Features
+
+* 🔐 User Registration & Login
+* 👥 Role-Based Access Control
+* 📅 Appointment Booking & Tracking
+* 🏥 Patient & Staff Management
+* 🍪 Cookie/Session Authentication
+* 🔒 Protected API Routes
+* 📊 User Data Isolation
+
+## 📸 Application Screenshots
+
+<div align="center">
+
+### 1. Overview & Dashboard
+
+<img src="screenshots/shot1.png" alt="MediTrack Dashboard" width="750">
 
 ---
+
+### 2. Create Account
+
+<img src="screenshots/shot2.png" alt="MediTrack Create Account" width="750">
+
+---
+
+### 3. Patient & Staff Management
+
+<img src="screenshots/shot3.png" alt="MediTrack Management" width="750">
+
+---
+
+### 4. Appointment Booking & Tracking
+
+<img src="screenshots/shot4.png" alt="MediTrack Appointment Booking" width="750">
+
+</div>
+
+---
+
+### 🔌 API Testing — Postman
+
+<div align="center">
+
+<img src="screenshots/postman1.png" width="400">
+&nbsp;&nbsp;
+<img src="screenshots/postman2.png" width="400">
+
+<br><br>
+
+<img src="screenshots/postman3.png" width="400">
+&nbsp;&nbsp;
+<img src="screenshots/postman4.png" width="400">
+
+</div>
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React, Axios
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Authentication:** Cookie Sessions / JWT
+**Frontend:** React, Axios
+**Backend:** Node.js, Express.js
+**Database:** MongoDB, Mongoose
+**Authentication:** Express Session, Cookies
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/Atibayounus/MediTrack.git
+cd MediTrack
+
+# Backend
+cd server
+npm install
+npm start
+
+# Frontend
+cd ../client
+npm install
+npm run dev
+```
+
+Create a `.env` file in `server` with your MongoDB URI and session secret.
 
 ---
 
-## 📦 Getting Started
+## 👨‍💻 Author
 
-### Prerequisites
-- Node.js (v16+ recommended)
-- MongoDB running locally or a cloud URI
+**Atiba Younus** — Computer Science Student & Full-Stack Developer
 
-### Installation
+[GitHub](https://github.com/Atibayounus)
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Atibayounus/MediTrack.git](https://github.com/Atibayounus/MediTrack.git)
-   cd MediTrack
-Install Server Dependencies:
+---
 
-Bash
-npm install
-Install Client Dependencies:
+<div align="center">
 
-Bash
-cd client
-npm install
-cd ..
-Environment Variables:
-Create a .env file in the root folder with:
+⭐ Star the repository if you like it!
 
-Code snippet
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-SESSION_SECRET=your_secret_key
-NODE_ENV=development
-Run the Application:
-
-Bash
-# Run server & client concurrently (or start them separately)
-npm run dev
+</div>
