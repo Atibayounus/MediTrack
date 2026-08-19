@@ -1,0 +1,189 @@
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1a2332;
+}
+
+body {
+  margin: 0;
+  background: #f1f5f9;
+}
+
+/* ===== Navbar ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 24px;
+  background: #0d5c63;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.nav a {
+  color: #e6fffa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+
+.nav a:hover {
+  color: #ffffff;
+}
+
+.nav .brand {
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.nav .spacer {
+  flex: 1;
+}
+
+/* button inside navbar should sit on the same line, not push down */
+.nav button {
+  margin-top: 0;
+  background: #14b8a6;
+  padding: 7px 14px;
+  font-size: 14px;
+}
+
+.nav button:hover {
+  background: #0d9488;
+}
+
+/* ===== Layout ===== */
+.page {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.card {
+  max-width: 460px;
+  margin: 32px auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.page .card {
+  margin: 0 0 24px;
+  max-width: none;
+}
+
+/* ===== Forms ===== */
+label {
+  display: block;
+  font-size: 13px;
+  margin: 12px 0 4px;
+  color: #52606d;
+}
+
+input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15);
+}
+
+button {
+  margin-top: 14px;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #0d5c63;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: #0a4a50;
+}
+
+button:disabled {
+  background: #a3b8b6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ===== Table ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: #475569;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e6ecf1;
+  font-size: 14px;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* table action buttons should stay compact, same line */
+.table button {
+  margin-top: 0;
+  margin-right: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* ===== Status badges ===== */
+.badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.badge.requested {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.confirmed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge.cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
