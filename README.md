@@ -17,7 +17,7 @@
 
 ## 📖 About
 
-MediTrack is a MERN-based healthcare management system for handling **authentication, patients, staff, and appointments** with role-based access control.
+MediTrack is a MERN based healthcare management system for handling **authentication, patients, staff, and appointments** with role-based access control.
 
 ## ✨ Features
 
