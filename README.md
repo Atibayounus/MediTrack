@@ -64,7 +64,6 @@ see and manage every patient's schedule.**
 ---
 
 ## 📑 Contents
-<div align="center">
 
 - [About](#-about)
 - [Features](#-features)
@@ -75,7 +74,6 @@ see and manage every patient's schedule.**
 - [Data Model](#data-model)
 - [Part 9 Extras](#part-9-extras--what-i-did)
 - [Reflection](#reflection)
-- [Author](#-author)
 
 ---
 
