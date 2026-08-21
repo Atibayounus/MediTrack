@@ -1,8 +1,6 @@
-<div align="center">
 
-# 🏥 MediTrack
 
-![MediTrack Banner](https://capsule-render.vercel.app/api?type=waving\&color=0:0052D4,50:4364F7,100:6FB1FC\&height=180\&section=header\&text=MediTrack\&fontSize=60\&fontColor=ffffff\&animation=fadeIn\&fontAlignY=38)
+![MediTrack Banner](https://capsule-render.vercel.app/api?type=waving\&color=0:0052D4,50:4364F7,100:6FB1FC\&height=180\&section=header\&text=🏥MediTrack\&fontSize=60\&fontColor=ffffff\&animation=fadeIn\&fontAlignY=38)
 
 ### Full-Stack Healthcare Management System
 
@@ -74,6 +72,55 @@ MediTrack is a MERN based healthcare management system for handling **authentica
 <img src="screenshots/postman4.png" width="400">
 
 </div>
+---
+
+## Request Lifecycle
+
+### Login flow
+
+```mermaid
+sequenceDiagram
+    participant U as Browser (React)
+    participant S as Express Server
+    participant DB as MongoDB
+
+    U->>S: POST /auth/login (email, password)
+    S->>DB: find user + compare password
+    DB-->>S: user found, password ok
+    S->>S: sign JWT (id, role)
+    S-->>U: 200 + Set-Cookie: token (HttpOnly)
+
+    Note over U: Page refresh happens
+    U->>S: GET /auth/me (cookie sent automatically)
+    S->>S: verify JWT from cookie
+    S-->>U: 200 + user (session restored)
+
+    U->>S: POST /auth/logout
+    S-->>U: clearCookie("token")
+    Note over U: Redux resets, redirected to /login
+```
+
+### Every protected request
+
+```mermaid
+flowchart TD
+    A[Request hits server] --> B{Cookie has token?}
+    B -- No --> C[401 Not authorised]
+    B -- Yes --> D{jwt.verify valid?}
+    D -- No / expired --> C
+    D -- Yes --> E[req.user set]
+    E --> F{Route needs a role?}
+    F -- No --> H[Run route handler]
+    F -- Yes --> G{req.user.role allowed?}
+    G -- No --> I[403 Forbidden]
+    G -- Yes --> H
+    H --> J{Route is owner-scoped?}
+    J -- No, staff route --> K[Return all matching data]
+    J -- Yes --> L{owner == req.user.id?}
+    L -- No --> M[404 Not Found]
+    L -- Yes --> N[Return / modify the record]
+```
+
 
 ## 🛠️ Tech Stack
 
