@@ -47,3 +47,4 @@ mongoose
     app.listen(PORT, () => console.log(`API listening on http://localhost:${PORT}`));
   })
   .catch((err) => console.error("MongoDB connection failed:", err.message));
+  module.exports = app;
