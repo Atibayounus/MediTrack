@@ -1,5 +1,4 @@
 
-
 require("dotenv").config();
 
 const express = require("express");
@@ -9,13 +8,36 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 
+// Allowed frontend origins
+const allowedOrigins = [
+  "https://medi-track-zfy7.vercel.app",
+];
+
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: (origin, callback) => {
+      // Allow requests without an origin
+      // (Postman, server-to-server, etc.)
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      // Allow main production frontend
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      // Allow Vercel preview deployments
+      if (origin.endsWith("-atiba-s-projects.vercel.app")) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
@@ -40,3 +62,4 @@ mongoose
 
 // Export app for Vercel
 module.exports = app;
+
